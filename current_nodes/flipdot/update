@@ -1,0 +1,2 @@
+#!/bin/sh
+wget http://brezn.muc.ccc.de/~schneider/flipdot/flipdot.png -O /home/pi/anzeigr/flipdot/flipdot.png

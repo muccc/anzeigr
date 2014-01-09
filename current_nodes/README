@@ -1,0 +1,3 @@
+diese root node rotiert durch die child nodes
+
+-> das Update script wird per user-cron jede Minute aufgerufen um neue Infos zu holen (space_state/upate, flipdot/update,...)

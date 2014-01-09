@@ -1,0 +1,3 @@
+#!/bin/sh
+wget http://api.muc.ccc.de/spaceapi.json -O spaceapi.raw
+< spaceapi.raw json_pp > /home/pi/anzeigr/space_state/spaceapi.json 

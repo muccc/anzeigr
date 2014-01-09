@@ -1,0 +1,28 @@
+{
+   "location" : {
+      "lat" : 48.15367,
+      "address" : "Heßstrasse 90, München, Germany",
+      "lon" : 11.56078
+   },
+   "contact" : {
+      "email" : "info@muc.ccc.de",
+      "irc" : "irc://ray.blafasel.de/#ccc",
+      "twitter" : "@muccc",
+      "ml" : "talk@lists.muc.ccc.de"
+   },
+   "projects" : [
+      "https://wiki.muc.ccc.de/projekte",
+      "https://github.com/muccc"
+   ],
+   "space" : "MuCCC",
+   "api" : "0.13",
+   "state" : {
+      "open" : true,
+      "message" : "members only"
+   },
+   "logo" : "http://muc.ccc.de/lib/tpl/muc3/images/muc3_klein.gif",
+   "url" : "https://muc.ccc.de",
+   "issue_report_channels" : [
+      "email"
+   ]
+}
