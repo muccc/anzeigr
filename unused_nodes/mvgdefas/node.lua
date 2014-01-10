@@ -1,4 +1,10 @@
+json = require "json"
+
 gl.setup(1366, 768)
+
+util.loaders.json = function(filename)
+    return json.decode(resource.load_file(filename))
+end
 
 util.auto_loader(_G)
 
@@ -12,25 +18,12 @@ function node.render()
   -- Horizontal line - probably should replace this with a shader?
   vialog_lt_regular:write(0, 30, "______________________________________________", 60, 1, 1, 1, 1)
 
-  
-  destinations = {
-    {"U", "U1", "Antarktis", "1"},
-    {"U", "U1", "Antarktis", "10"},
-    {"U", "U1", "Antarktis", "15"},
-    {"U", "U1", "Antarktis", "20"},
-    {"U", "U1", "Antarktis", "25"},
-    {"U", "U1", "Antarktis", "30"},
-    {"U", "U1", "Antarktis", "50"},
-    {"U", "U1", "Antarktis", "90"},
-    {"U", "U1", "Antarktis", "120"},
-  }
-
   ypos = 90
-  for i in pairs(destinations) do
-    vialog_lt_regular:write(20, ypos, destinations[i][1], 60, 1, 1, 1, 1)
-    vialog_lt_regular:write(70, ypos, destinations[i][2], 60, 1, 1, 1, 1)
-    vialog_lt_regular:write(230, ypos, destinations[i][3], 60, 1, 1, 1, 1)
-    vialog_lt_regular:write(WIDTH-20-(string.len(destinations[i][4])*31), ypos, destinations[i][4], 60, 1, 1, 1, 1)
+  for i in pairs(departures) do
+    --vialog_lt_regular:write(20, ypos, destinations[i][1], 60, 1, 1, 1, 1)
+    vialog_lt_regular:write(70, ypos, departures[i].line, 60, 1, 1, 1, 1)
+    vialog_lt_regular:write(230, ypos, departures[i].destination, 60, 1, 1, 1, 1)
+    vialog_lt_regular:write(WIDTH-20-(string.len(departures[i].minutes)*31), ypos, departures[i].minutes, 60, 1, 1, 1, 1)
     ypos = ypos+70
   end
 

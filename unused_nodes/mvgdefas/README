@@ -1,0 +1,8 @@
+Requirements:
+pip install feedparser
+pip install json
+gem install mvg-live
+
+Call on a regular base (every minute or so?):
+mvgdefas/getmvglive.py
+mvgdefas/ticker/getmvgticker.py
