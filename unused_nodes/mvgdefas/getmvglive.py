@@ -5,7 +5,7 @@ import json
 
 stations = {}
 stations['Sandstraße'] = {"default_transports": ["tram"]}
-stations['Josephsplatz'] = {"default_transports": ["u"]}
+stations['Theresienstraße'] = {"default_transports": ["u"]}
 stations['Görresstraße'] = {"default_transports": ["bus"]}
 
 alldepartures = []
