@@ -1,6 +1,7 @@
 import feedparser
 import json
 import io
+import os
 
 feed = feedparser.parse("http://www.mvg-mobil.de/Tickerrss/CreateRssClass")
 

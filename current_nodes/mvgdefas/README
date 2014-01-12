@@ -1,6 +1,7 @@
 Requirements:
 pip install feedparser
 pip install json
+pip install requests
 
 Call on a regular base (every minute or so?):
 mvgdefas/getmvglive.py
