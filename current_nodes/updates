@@ -2,3 +2,5 @@
 BASEDIR=$(dirname $0)
 $BASEDIR/space_state/update
 $BASEDIR/flipdot/update
+python $BASEDIR/mvgdefas/getmvglive.py
+python $BASEDIR/mvgdefas/ticker/getmvgticker.py
