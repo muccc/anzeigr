@@ -28,8 +28,8 @@ while collected < 9:
   currentdeparture += 1
 
 for departure in departures:
-  os.system('wget -nc -O ' + BASEDIR + '/' + departure['linesymbol'] + ' ' + departure['linesymbolurl'])
-  os.system('wget -nc -O ' + BASEDIR + '/' + departure['productsymbol'] + ' ' + departure['productsymbolurl'])
+  os.system('wget -nc -O ' + BASEDIR + '/' + departure['linesymbol'] + ' ' + departure['linesymbolurl'] + '; if [ $? -eq 0 ]; then convert ' + BASEDIR + '/' + departure['linesymbol'] + ' ' + BASEDIR + '/' + departure['linesymbol'] + '.png; fi')
+  os.system('wget -nc -O ' + BASEDIR + '/' + departure['productsymbol'] + ' ' + departure['productsymbolurl'] + '; if [ $? -eq 0 ]; then convert ' + BASEDIR + '/' + departure['productsymbol'] + ' ' + BASEDIR + '/' + departure['productsymbol'] + '.png; fi')
 
 with io.open(BASEDIR + '/departures.json', 'w', encoding='utf-8') as f:
    f.write(unicode(json.dumps(departures, ensure_ascii=False)))
