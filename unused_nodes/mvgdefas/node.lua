@@ -20,10 +20,12 @@ function node.render()
 
   ypos = 90
   for i in pairs(departures) do
-    --vialog_lt_regular:write(20, ypos, destinations[i][1], 60, 1, 1, 1, 1)
-    vialog_lt_regular:write(70, ypos, departures[i].line, 60, 1, 1, 1, 1)
+	-- TODO Load product-image
+    vialog_lt_regular:write(20, ypos, string.sub(departures[i].product, 0, 1), 60, 1, 1, 1, 1)
+	-- TODO Load line-image
+    vialog_lt_regular:write(70, ypos, departures[i].linename, 60, 1, 1, 1, 1)
     vialog_lt_regular:write(230, ypos, departures[i].destination, 60, 1, 1, 1, 1)
-    vialog_lt_regular:write(WIDTH-20-(string.len(departures[i].minutes)*31), ypos, departures[i].minutes, 60, 1, 1, 1, 1)
+    vialog_lt_regular:write(WIDTH-20-(string.len(departures[i].time)*31), ypos, departures[i].time, 60, 1, 1, 1, 1)
     ypos = ypos+70
   end
 
