@@ -1,3 +1,4 @@
 #!/bin/sh
-./space_state/update
-./flipdot/update
+BASEDIR=$(dirname $0)
+$BASEDIR/space_state/update
+$BASEDIR/flipdot/update
