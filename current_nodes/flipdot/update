@@ -1,2 +1,3 @@
 #!/bin/sh
-wget http://brezn.muc.ccc.de/~schneider/flipdot/flipdot.png -O /home/pi/anzeigr/flipdot/flipdot.png
+BASEDIR=$(dirname $0)
+wget http://brezn.muc.ccc.de/~schneider/flipdot/flipdot.png -O $BASEDIR/flipdot.png
