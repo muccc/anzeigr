@@ -27,6 +27,9 @@ while collected < 9:
         collected += 1
   currentdeparture += 1
 
+for departure in departures:
+  os.system('wget -nc -O ' + BASEDIR + '/' + departure['linesymbol'] + ' ' + departure['linesymbolurl'])
+  os.system('wget -nc -O ' + BASEDIR + '/' + departure['productsymbol'] + ' ' + departure['productsymbolurl'])
 
 with io.open(BASEDIR + '/departures.json', 'w', encoding='utf-8') as f:
    f.write(unicode(json.dumps(departures, ensure_ascii=False)))

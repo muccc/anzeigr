@@ -21,13 +21,19 @@ function node.render()
   ypos = 90
   for i in pairs(departures) do
 	-- TODO Load product-image
-    vialog_lt_regular:write(20, ypos, string.sub(departures[i].product, 0, 1), 60, 1, 1, 1, 1)
+    --vialog_lt_regular:write(20, ypos, string.sub(departures[i].product, 0, 1), 60, 1, 1, 1, 1)
+	getResource(departures[i].productsymbol):draw(20, ypos+8, 20+40, ypos+48)
 	-- TODO Load line-image
-    vialog_lt_regular:write(70, ypos, departures[i].linename, 60, 1, 1, 1, 1)
+    --vialog_lt_regular:write(70, ypos, departures[i].linename, 60, 1, 1, 1, 1)
+	getResource(departures[i].linesymbol):draw(90, ypos+8, 90+79, ypos+48)
     vialog_lt_regular:write(230, ypos, departures[i].destination, 60, 1, 1, 1, 1)
     vialog_lt_regular:write(WIDTH-20-(string.len(departures[i].time)*31), ypos, departures[i].time, 60, 1, 1, 1, 1)
     ypos = ypos+70
   end
 
   resource.render_child("ticker"):draw(0, HEIGHT-60, WIDTH, HEIGHT)
+end
+
+function getResource(product)
+	return resource.load_image(product)
 end
