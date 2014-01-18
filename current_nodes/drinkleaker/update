@@ -1,0 +1,3 @@
+#!/bin/bash
+BASEDIR=$(dirname $0)
+/usr/bin/wget -q 'http://83.133.178.143:5991/k_23/_design/info/_view/drinks?group=true' -O - | python $BASEDIR/postproc.py > $BASEDIR/drinks.json
