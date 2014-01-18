@@ -5,12 +5,12 @@ font = resource.load_font("font.ttf")
 local Absatz = "absatz"
 
 local preise = {
-    {"Tschunk",   "4,- €"},
-    {"Mate",      "2,- €"},
-    {"Bier",      "2,- €"},
-    {"Shots",     "1,- €"},
-    {"Cola",      "1,50 €"},
-    {"Spezi",     "1,50 €"},
+    {"Tschunk",    "4,- €"},
+    {"Gewürzkoma", "5,- €"},
+    {"Mate",       "2,- €"},
+    {"Bier",       "2,- €"},
+    {"Shots",      "1,- €"},
+    {"Cola/Spezi", "2,- €"},
 }
 
 function Preisliste(preise, x, y, spacing, size)
