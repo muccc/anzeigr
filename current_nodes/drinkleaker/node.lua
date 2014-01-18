@@ -21,7 +21,7 @@ function Drinkleaker(drinks, x, y, spacing, size)
         until drinks[row] ~= Absatz
         local title, price = unpack(drinks[row])
         col = math.random(#title - 1)
-        next_kaputt = sys.now() + math.random() * 60
+        next_kaputt = sys.now() + math.random() * 60 + 20
     end
 
     select_next()
