@@ -10,7 +10,10 @@ BASEDIR = os.path.dirname(os.path.realpath(__file__))
 jsonfeed = []
 
 for item in feed['items']:
-  jsonfeed.append(item['title'])
+  if item['description']:
+    jsonfeed.append(item['title'].replace(" ... [weiter]", "") + ": " + item['description'])
+  else:
+    jsonfeed.append(item['title'])
 
 with io.open(BASEDIR + '/mvgticker.json', 'w', encoding='utf-8') as f:
   f.write(unicode(json.dumps(jsonfeed, ensure_ascii=False)))
