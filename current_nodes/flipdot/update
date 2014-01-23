@@ -1,0 +1,3 @@
+#!/bin/sh
+BASEDIR=$(dirname $0)
+wget http://brezn.muc.ccc.de/~schneider/flipdot/flipdot.png -O $BASEDIR/flipdot.png
