@@ -5,7 +5,7 @@ font = resource.load_font("font.ttf")
 local Absatz = "absatz"
 
 local preise = {
-    {"Flasche Havanna",    "12.83 €"},
+    {"Fl. Havanna",    "12.83 €"},
     {"Limette", "0.50 €"},
     {"Mate",       "1.50 €"},
 
