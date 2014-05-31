@@ -1,6 +1,6 @@
 json = require "json"
 
-gl.setup(1366, 768)
+gl.setup(1024, 768)
 
 util.loaders.json = function(filename)
     return json.decode(resource.load_file(filename))

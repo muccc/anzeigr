@@ -1,4 +1,4 @@
-gl.setup(1366, 768)
+gl.setup(1024, 768)
 
 font = resource.load_font("font.ttf")
 

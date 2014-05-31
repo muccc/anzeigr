@@ -1,4 +1,4 @@
-gl.setup(1360, 768)
+gl.setup(1024, 768)
 
 image = resource.load_image("kannste.png")
 
