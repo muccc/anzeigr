@@ -20,7 +20,7 @@ function node.render()
   -- Headline
   vialog_lt_regular:write(20, 20, "Linie", 60, 1, 1, 1, 1)
   vialog_lt_regular:write(230, 20, "Ziel", 60, 1, 1, 1, 1)
-  vialog_lt_regular:write(1000, 20, "Abfahrt in Min.", 60, 1, 1, 1, 1)
+  vialog_lt_regular:write(700, 20, "Abfahrt in Min.", 60, 1, 1, 1, 1)
   -- Horizontal line - probably should replace this with a shader?
   vialog_lt_regular:write(0, 30, "______________________________________________", 60, 1, 1, 1, 1)
 
