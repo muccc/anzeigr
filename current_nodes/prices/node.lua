@@ -57,7 +57,7 @@ function Preisliste(preise, x, y, spacing, size)
     }
 end
 
-local preisliste = Preisliste(preise, 50, 150, 900, 70)
+local preisliste = Preisliste(preise, 50, 150, 750, 70)
 
 function node.render()
     gl.clear(0, 0, 0, 1) -- black background
