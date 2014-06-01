@@ -1,4 +1,4 @@
-local INTERVAL = 10
+local INTERVAL = 4
 
 gl.setup(1024, 768)
 
@@ -26,7 +26,7 @@ function node.render()
     resource.render_child("header"):draw(0, 0, WIDTH, 100)
 
     -- show images
-    util.draw_correct(current_image, 0, 0, WIDTH, HEIGHT)
+    util.draw_correct(current_image, 0, 100, WIDTH, HEIGHT-100)
 
 end
 
