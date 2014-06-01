@@ -57,13 +57,13 @@ function Preisliste(preise, x, y, spacing, size)
     }
 end
 
-local preisliste = Preisliste(preise, 50, 150, 900, 105)
+local preisliste = Preisliste(preise, 50, 150, 900, 70)
 
 function node.render()
     gl.clear(0, 0, 0, 1) -- black background
 
     -- render logo
-    resource.render_child("header"):draw(0, 0, WIDTH, 70)
+    resource.render_child("header"):draw(0, 0, WIDTH, 100)
 
     preisliste:draw()
 
