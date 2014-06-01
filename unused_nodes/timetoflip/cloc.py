@@ -1,4 +1,4 @@
-import socket, datetime
+import socket, datetime, io
 
 now = datetime.datetime.now()
 
@@ -7,5 +7,7 @@ since_midnight = (
     now.replace(hour=0, minute=0, second=0)
 ).seconds
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-sock.sendto('analogclock/clock/set:%d' % since_midnight, ('127.0.0.1', 4444))
+
+with io.open('time.json', 'w', encoding='utf-8') as f:
+   f.write(unicode(since_midnight))
+   f.close()

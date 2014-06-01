@@ -17,8 +17,8 @@ function node.render()
     -- render logo
     resource.render_child("header"):draw(0, 0, WIDTH, 100)
 
-    font:write(100, 200, "current state:", 110, 1,1,1,1)
+    font:write(50, 200, "current state:", 80, 1,1,1,1)
     -- show spacestate
-    font:write(100, 350, spaceapi.state.message, 130, 1,1,0,1)
+    font:write(50, 350, spaceapi.state.message, 100, 1,1,0,1)
 
 end
