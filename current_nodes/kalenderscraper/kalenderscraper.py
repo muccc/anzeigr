@@ -7,6 +7,8 @@ import urllib2
 from bs4 import BeautifulSoup
 import json
 
+DayL = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+
 now = datetime.datetime.now()
 
 soup = BeautifulSoup(urllib2.urlopen('http://wiki.muc.ccc.de/kalender').read())
@@ -32,9 +34,11 @@ for row in rows:
 
 for date in dates:
     testdate = datetime.datetime.strptime(date[0] + "." + date[1] + "." + str(now.year), "%d.%m.%Y")
-    if testdate > now:        
+    
+    if testdate > now:   
         jsonstring = json.dumps({'date': date[0] + "." + date[1] + ".", \
                                  'time': date[2], \
+                                 'weekday': DayL[testdate.weekday()], \
                                  'name': date[3]})
 
         fhandle = open('nextevent.json', "w+")

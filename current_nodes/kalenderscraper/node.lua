@@ -18,6 +18,7 @@ function node.render()
     resource.render_child("header"):draw(0, 0, WIDTH, 100)
 
     -- show next event
+    font:write(50, 150, nextevent.weekday, 100, 1,1,0,1)
     font:write(50, 200, nextevent.date, 100, 1,1,0,1)
     font:write(50, 350, nextevent.time, 100, 1,1,0,1)
     font:write(50, 500, nextevent.name, 100, 1,1,0,1)
