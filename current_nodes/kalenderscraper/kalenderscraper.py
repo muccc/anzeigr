@@ -2,6 +2,7 @@
 # Kalenderscraper
 # c007, 02.06.14
 
+import os
 import datetime
 import urllib2
 from bs4 import BeautifulSoup
@@ -41,6 +42,7 @@ for date in dates:
                                  'weekday': DayL[testdate.weekday()], \
                                  'name': date[3]})
 
-        fhandle = open('nextevent.json', "w+")
+        path = os.path.dirname(os.path.realpath(__file__))
+        fhandle = open(path + '/nextevent.json', "w+")
         print >> fhandle, jsonstring
         break
