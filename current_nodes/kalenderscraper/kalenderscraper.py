@@ -25,22 +25,27 @@ for row in rows:
         d_month = d_date.split('.')[1]
         d_time  = data[1].get_text().strip(' ')
         d_name  = data[2].get_text().strip(' ')
+        d_public= data[3].get_text().strip(' ')
+        d_anzahl= data[4].get_text().strip(' ')
+        d_keyholder = data[5].get_text().strip(' ')
 
-        dates.append( (d_day, d_month, d_time, d_name) )
-
+        dates.append( (d_day, d_month, d_time, d_name, \
+            d_public, d_anzahl, d_keyholder) )
 
     except:
         pass
 
 
 for date in dates:
-    testdate = datetime.datetime.strptime(date[0] + "." + date[1] + "." + str(now.year), "%d.%m.%Y")
-    
+    testdate = datetime.datetime.strptime(date[0] + "." + date[1] + "." + \
+                str(now.year) + " " + date[2], "%d.%m.%Y %H:%M")    
+
     if testdate > now:   
         jsonstring = json.dumps({'date': date[0] + "." + date[1] + ".", \
                                  'time': date[2], \
                                  'weekday': DayL[testdate.weekday()], \
-                                 'name': date[3]})
+                                 'name': date[3], \
+                                 'public': date[4]})
 
         path = os.path.dirname(os.path.realpath(__file__))
         fhandle = open(path + '/nextevent.json', "w+")
