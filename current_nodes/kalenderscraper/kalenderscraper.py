@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 # Kalenderscraper
 # c007, 02.06.14
 
@@ -41,13 +41,15 @@ for date in dates:
                 str(now.year) + " " + date[2], "%d.%m.%Y %H:%M")    
 
     if testdate > now:   
+        eventname = date[3].replace(u'ü', 'ue').replace(u'ä','ae').replace(u'ö','oe')
         jsonstring = json.dumps({'date': date[0] + "." + date[1] + ".", \
                                  'time': date[2], \
                                  'weekday': DayL[testdate.weekday()], \
-                                 'name': date[3], \
+                                 'name': eventname, \
                                  'public': date[4]})
 
         path = os.path.dirname(os.path.realpath(__file__))
         fhandle = open(path + '/nextevent.json', "w+")
         print >> fhandle, jsonstring
+        fhandle.close()
         break
