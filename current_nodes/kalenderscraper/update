@@ -1,0 +1,4 @@
+#!/bin/sh
+BASEDIR=$(dirname $0)
+wget http://api.muc.ccc.de/nextevent.json -O $BASEDIR/nextevent.raw
+< $BASEDIR/nextevent.raw json_pp > $BASEDIR/nextevent.json 
