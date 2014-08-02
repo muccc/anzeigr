@@ -9,7 +9,7 @@ local preise = {
     {"Mate", "2.00 €"},
     {"Bier", "2.00 €"},
     {"Wodka Shot", "1.00 €"},
-
+    {"GulaschChilli", "2.00 €"},
 }
 
 function Preisliste(preise, x, y, spacing, size)
