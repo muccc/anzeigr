@@ -19,6 +19,9 @@ function node.render()
 
     font:write(50, 200, "temperature:", 80, 1,1,1,1)
     -- show spacestate
-    font:write(50, 350, pwrplnt.with.content.temperature, 100, 1,1,0,1)
+    font:write(50, 350, pwrplnt.with[1].content.temperature, 100, 1,1,0,1)
+    font:write(50, 400, "humidity:", 80, 1,1,1,1)
+    -- show spacestate
+    font:write(50, 450, pwrplnt.with[1].content.airHumidity, 100, 1,1,0,1)
 
 end
