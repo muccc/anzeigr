@@ -1,0 +1,21 @@
+{
+   "with" : [
+      {
+         "thing" : "pwrplnt",
+         "created" : "2014-08-26T20:40:50.024Z",
+         "content" : {
+            "moisture" : 29,
+            "pumpState" : 0,
+            "airHumidity" : 36,
+            "lightState" : 0,
+            "active" : 1,
+            "temperature" : 22,
+            "waterLevelOk" : 1,
+            "brightness" : 0
+         }
+      }
+   ],
+   "this" : "succeeded",
+   "by" : "getting",
+   "the" : "dweets"
+}
