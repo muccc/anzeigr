@@ -17,7 +17,7 @@ function node.render()
     -- render logo
     resource.render_child("header"):draw(0, 0, WIDTH, 100)
 
-    font:write(50, 200, "temperature (°C):", 80, 1,1,1,1)
+    font:write(50, 200, "temperature (C):", 80, 1,1,1,1)
     -- show spacestate
     font:write(50, 350, pwrplnt.with[1].content.temperature, 100, 1,1,0,1)
     font:write(50, 500, "humidity (%):", 80, 1,1,1,1)
