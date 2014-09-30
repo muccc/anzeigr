@@ -26,11 +26,13 @@ function node.render()
     clients=0
     for Index,Value in pairs(nodes.nodes) do
 	if(Value.flags.online) == true then	
-	  nodecount = nodecount+1
-          if(Value.flags.gateway) == true then
+	  if(Value.flags.client) == true then
+            clients = clients+1
+          elseif(Value.flags.gateway) == true then
             gatewaycount = gatewaycount + 1
+          else
+            nodecount = nodecount + 1          
           end
-          clients = clients + Value.clientcount
         end
     end
 
