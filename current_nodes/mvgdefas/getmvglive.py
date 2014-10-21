@@ -3,6 +3,7 @@ import io
 import os
 import json
 import MVGLive
+import sys
 
 stations = []
 stations.append('Sandstraße')
@@ -13,13 +14,19 @@ BASEDIR = os.path.dirname(os.path.realpath(__file__))
 
 alldepartures = []
 departures = []
+maxdepartures = 0
 for station in stations:
-  alldepartures.append(MVGLive.getlivedata(station))
+  departuredata = MVGLive.getlivedata(station)
+  if len(departuredata) > 0:
+    alldepartures.append(departuredata)
+    maxdepartures += len(departuredata)
 
+if maxdepartures > 9:
+  maxdepartures = 9
 
 collected = 0
 currentdeparture = 0
-while collected < 9:
+while collected < maxdepartures:
   for departureset in alldepartures:
     for departure in departureset:
       if departure['time'] == currentdeparture:
