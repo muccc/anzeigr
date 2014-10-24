@@ -1,4 +1,3 @@
 #!/bin/sh
 BASEDIR=$(dirname $0)
-wget http://37.120.168.150/ffmap-d3/nodes.json -O $BASEDIR/nodes.raw
-< $BASEDIR/nodes.raw json_pp > $BASEDIR/nodes.json 
+wget http://37.120.168.150/node_stats -O $BASEDIR/node_stats 
