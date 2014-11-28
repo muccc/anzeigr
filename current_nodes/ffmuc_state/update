@@ -1,3 +1,3 @@
 #!/bin/sh
 BASEDIR=$(dirname $0)
-wget http://37.120.168.150/node_stats -O $BASEDIR/node_stats 
+wget http://5.45.105.113/node_stats.txt -O $BASEDIR/node_stats 
