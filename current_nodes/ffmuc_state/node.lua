@@ -4,13 +4,13 @@ json = require "json"
 
 font = resource.load_font("silkscreen.ttf")
 
-str_stats = resource.load_file("node_stats")
 
 util.auto_loader(_G)
 
 function node.render()
     gl.clear(1, 1, 1, 1) -- white background
 
+    str_stats = resource.load_file("node_stats")
     -- render logo
     resource.render_child("header"):draw(0, 0, WIDTH, 100)
 
