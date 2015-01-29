@@ -8,5 +8,5 @@ function node.render()
 
     util.draw_correct(image, 0, 0, 150, 100)
 
-    font:write(160, 10, "luftschleuse", 100, 1,1,1,1)
+    font:write(160, 10, "space state", 100, 1,1,1,1)
 end

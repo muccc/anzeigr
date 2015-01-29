@@ -1,4 +1,4 @@
 #!/bin/sh
 BASEDIR=$(dirname $0)
-wget http://api.muc.ccc.de/spaceapi.json -O $BASEDIR/spaceapi.raw
-< $BASEDIR/spaceapi.raw json_pp > $BASEDIR/spaceapi.json 
+wget https://dweet.io:443/get/latest/dweet/for/pwrplnt -O $BASEDIR/pwrplnt.raw
+< $BASEDIR/pwrplnt.raw json_pp > $BASEDIR/pwrplnt.json 
