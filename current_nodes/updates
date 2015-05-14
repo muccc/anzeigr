@@ -3,6 +3,6 @@ BASEDIR=$(dirname $0)
 $BASEDIR/space_state/update
 python $BASEDIR/mvgdefas/getmvglive.py
 python $BASEDIR/mvgdefas/ticker/getmvgticker.py
-$BASEDIR/drinkleaker/update
+#$BASEDIR/drinkleaker/update
 $BASEDIR/kalenderscraper/update
 $BASEDIR/ffmuc_state/update
