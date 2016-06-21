@@ -1,5 +1,7 @@
 gl.setup(540, 200)
 
+local font = resource.load_font("silkscreen.ttf")
+
 util.auto_loader(_G)
 
 function clock(fliptime)
@@ -95,7 +97,7 @@ function fliptext(font, x, y, size, r, g, b, a, duration)
 end
 
 local last_update = sys.now()
-local fliptime = fliptext(bold, 0, 100, 114, 1, 1, 1, 1, 0.9)
+local fliptime = fliptext(font, 0, 100, 114, 1, 1, 1, 1, 0.9)
 local c = clock(fliptime)
 
 function node.render()
@@ -107,6 +109,6 @@ function node.render()
 
   fliptime:render()
 
-  bold:write(0, 0, c.day(), 50, 1.0, 1.0, .4, 1)
-  regular:write(0, 50, c.date(), 50, .7, 1.0, .7, 1)
+  font:write(0, 0, c.day(), 50, 1.0, 1.0, .4, 1)
+  font:write(0, 50, c.date(), 50, .7, 1.0, .7, 1)
 end
