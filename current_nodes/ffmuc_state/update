@@ -1,4 +1,3 @@
 #!/bin/sh
 BASEDIR=$(dirname $0)
-#curl -k https://ffmuc.net/data/stats.txt > $BASEDIR/node_stats
-curl https://ffmuc.net/data/nodelist.json | python -c 'import sys, json; c = map(lambda n: n["status"]["clients"], filter(lambda n: n.get("online", True), json.loads(sys.stdin.read())["nodes"])); print "%s %s" % (len(c), sum(c))' > $BASEDIR/node_stats
+curl https://ffmuc.net/data/nodes.json | python -c 'import sys, json; c = map(lambda n: n["statistics"]["clients"], filter(lambda n: n["flags"]["online"], json.loads(sys.stdin.read())["nodes"].values())); print "%s %s" % (len(c), sum(c))' > $BASEDIR/node_stats
