@@ -1,4 +1,8 @@
 #!/bin/sh
 BASEDIR=$(dirname $0)
 wget http://api.muc.ccc.de/nextevent.json -O $BASEDIR/nextevent.raw
-< $BASEDIR/nextevent.raw json_pp > $BASEDIR/nextevent.json 
+if [ -s $BASEDIR/nextevent.raw ] ; then
+	< $BASEDIR/nextevent.raw json_pp > $BASEDIR/nextevent.json
+else
+	echo "Kalenderscraper failed."
+fi

@@ -1,4 +1,8 @@
 #!/bin/sh
 BASEDIR=$(dirname $0)
 curl https://data.ffmuc.net/nodes.json | python -c 'import sys, json; c = map(lambda n: n["statistics"]["clients"], filter(lambda n: n["flags"]["online"], json.loads(sys.stdin.read())["nodes"])); print "%s %s" % (len(c), sum(c))' > /tmp/node_stats
-cp /tmp/node_stats $BASEDIR/node_stats
+if [ -s /tmp/node_stats ] ; then
+	cp /tmp/node_stats $BASEDIR/node_stats
+else
+	echo "FFMuc update failed. Keeping old one"
+fi
