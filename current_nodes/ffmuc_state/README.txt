@@ -1,3 +1,1 @@
-Holt den aktuellen Kapselstatus von 
-http://api.muc.ccc.de/spaceapi.json
-
+Zeigt die aktuellen FFMuc statistik an
