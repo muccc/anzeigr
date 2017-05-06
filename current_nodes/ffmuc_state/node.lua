@@ -1,4 +1,4 @@
-gl.setup(1024, 768)
+gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
 
 json = require "json"
 
@@ -19,9 +19,10 @@ function node.render()
 
     router = 0
     clients = 0
-    router, clients = string.match(str_stats, '(%d+) (%d+)')
+    router, clients, ltime = string.match(str_stats, '(%d+) (%d+) (.+)')
 
     font:write(75, 150, router, 160, 0,0,0,1)    
     font:write(75, 450, clients, 160, 0,0,0,1)
 
+    font:write(1120, 740, ltime, 20, 0,0,0,1)
 end
