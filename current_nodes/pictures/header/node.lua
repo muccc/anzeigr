@@ -1,4 +1,4 @@
-gl.setup(1024, 100)
+gl.setup(NATIVE_WIDTH, 100)
 
 image = resource.load_image("logo_muccc_inv.png")
 font = resource.load_font("silkscreen.ttf")

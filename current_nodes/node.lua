@@ -1,4 +1,4 @@
-gl.setup(1024, 768)
+gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
 
 local interval = 10
 
