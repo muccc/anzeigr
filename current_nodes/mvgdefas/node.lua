@@ -15,14 +15,17 @@ util.file_watch("departures.json", function(content)
 end)
 
 function node.render()
+  local size=60
   -- Background: #00106f - dark blue
   gl.clear(0, 0.062745098, 0.435294118, 1)
   -- Headline
-  vialog_lt_regular:write(20, 20, "Linie", 60, 1, 1, 1, 1)
-  vialog_lt_regular:write(230, 20, "Ziel", 60, 1, 1, 1, 1)
-  vialog_lt_regular:write(650, 20, "Abfahrt in Min.", 60, 1, 1, 1, 1)
+  vialog_lt_regular:write(20, 20, "Linie", size, 1, 1, 1, 1)
+  vialog_lt_regular:write(230, 20, "Ziel", size, 1, 1, 1, 1)
+  local str="Abfahrt in Min."
+  local w=vialog_lt_regular:width(str,size)
+  vialog_lt_regular:write(WIDTH-w-20, 20, str, size, 1, 1, 1, 1)
   -- Horizontal line - probably should replace this with a shader?
-  vialog_lt_regular:write(0, 30, "______________________________________________", 60, 1, 1, 1, 1)
+  vialog_lt_regular:write(0, 30, "______________________________________________", size, 1, 1, 1, 1)
 
   ypos = 90
   for i in pairs(departures) do
