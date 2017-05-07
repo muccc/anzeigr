@@ -61,6 +61,7 @@ function fliptext(font, x, y, size, r, g, b, a, duration)
   end
 
   local function render()
+    local width=size* 0.6
     if anim_start > 0 then
       local delta = sys.now() - anim_start
       local alpha = math.sin(delta/duration*3.14159/2)
@@ -68,24 +69,48 @@ function fliptext(font, x, y, size, r, g, b, a, duration)
       if delta > duration then
         anim_start = 0
       end
-      
+
       gl.pushMatrix()
       gl.translate(x, y + size/2, size/3)
 
       gl.pushMatrix()
       gl.rotate(alpha*90, 1, 0, 0)
       gl.translate(0, 0, -size/3)
-      font:write(50, -size/2, t1, size, r, g, b, 1-alpha)
+      local c = width/2
+      for i = 1,#t1 do
+        local l = t1:sub(i, i)
+	local w = font:width(l, size)
+        font:write(c-w/2, -size/2, l, size, r, g, b, 1-alpha)
+	c = c + width
+      end
       gl.popMatrix()
 
       gl.rotate(alpha*90-90, 1, 0, 0)
       gl.translate(0, 0, -size/3)
-      font:write(50, -size/2, t2, size, r, g, b, alpha)
+      local c = width/2
+      for i = 1,#t2 do
+        local l = t2:sub(i, i)
+	local w = font:width(l, size)
+        font:write(c-w/2, -size/2, l, size, r, g, b, alpha)
+	c = c + width
+      end
 
       gl.popMatrix()
-      font:write(x, y, t3, size, r, g, b, a)
+      local c = width/2
+      for i = 1,#t3 do
+        local l = t3:sub(i, i)
+	local w = font:width(l, size)
+        font:write(x+c-w/2, y, l, size, r, g, b, a)
+	c = c + width
+      end
     else
-      font:write(x, y, text, size, r, g, b, a)
+      local c = width/2
+      for i = 1,#text do
+        local l = text:sub(i, i)
+	local w = font:width(l, size)
+        font:write(x+c-w/2, y, l, size, r, g, b, a)
+	c = c + width
+      end
     end
   end
 
