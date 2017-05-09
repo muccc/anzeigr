@@ -3,6 +3,7 @@ gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
 json = require "json"
 
 font = resource.load_font("silkscreen.ttf")
+fon2 = resource.load_font("fon2.ttf")
 
 
 util.auto_loader(_G)
@@ -24,5 +25,6 @@ function node.render()
     font:write(75, 150, router, 160, 0,0,0,1)    
     font:write(75, 450, clients, 160, 0,0,0,1)
 
-    font:write(1120, 740, ltime, 20, 0,0,0,1)
+    local w=fon2:width(ltime, 20)
+    fon2:write(NATIVE_WIDTH-w-10, NATIVE_HEIGHT-25, ltime, 18, 0,0,0,1)
 end
