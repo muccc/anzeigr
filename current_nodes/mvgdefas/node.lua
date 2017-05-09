@@ -33,8 +33,8 @@ function node.render()
     vialog_lt_regular:write(20, ypos+8, string.sub(departures[i].product, 0, 1), 60, 1, 1, 1, 1)
     -- getResource(departures[i].linesymbol):draw(90, ypos+8, 90+79, ypos+48):dispose()
     vialog_lt_regular:write(90, ypos+8, departures[i].linename, 60, 1, 1, 1, 1)
-    vialog_lt_regular:write(230, ypos, departures[i].destination, 60, 1, 1, 1, 1)
-    vialog_lt_regular:write(WIDTH-20-(string.len(departures[i].time)*31), ypos, departures[i].time, 60, 1, 1, 1, 1)
+    vialog_lt_regular:write(230, ypos+8, departures[i].destination, 60, 1, 1, 1, 1)
+    vialog_lt_regular:write(WIDTH-20-(string.len(departures[i].time)*31), ypos+8, departures[i].time, 60, 1, 1, 1, 1)
     ypos = ypos+70
   end
 
