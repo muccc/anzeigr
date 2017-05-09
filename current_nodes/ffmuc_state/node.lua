@@ -3,7 +3,10 @@ gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
 json = require "json"
 
 font = resource.load_font("silkscreen.ttf")
-fon2 = resource.load_font("fon2.ttf")
+
+util.resource_loader{
+  "fon2";
+}
 
 
 util.auto_loader(_G)
