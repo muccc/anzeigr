@@ -6,12 +6,22 @@ util.loaders.json = function(filename)
   return json.decode(resource.load_file(filename))
 end
 
+imagecache={}
+
 util.resource_loader{
   "vialog_lt_regular.ttf";
 }
 
 util.file_watch("departures.json", function(content)
   departures = json.decode(content)
+  for i in pairs(departures) do
+    if imagecache[departures[i].productsymbol] == nil then
+      imagecache[departures[i].productsymbol] = resource.load_image(departures[i].productsymbol .. ".png")
+    end
+    if imagecache[departures[i].linesymbol] == nil then
+      imagecache[departures[i].linesymbol]    = resource.load_image(departures[i].linesymbol .. ".png")
+    end
+  end
 end)
 
 function node.render()
@@ -29,12 +39,12 @@ function node.render()
 
   ypos = 90
   for i in pairs(departures) do
-    -- getResource(departures[i].productsymbol):draw(20, ypos+8, 20+40, ypos+48):dispose()
-    vialog_lt_regular:write(20, ypos+8, string.sub(departures[i].product, 0, 1), 60, 1, 1, 1, 1)
-    -- getResource(departures[i].linesymbol):draw(90, ypos+8, 90+79, ypos+48):dispose()
-    vialog_lt_regular:write(90, ypos+8, departures[i].linename, 60, 1, 1, 1, 1)
-    vialog_lt_regular:write(230, ypos+8, departures[i].destination, 60, 1, 1, 1, 1)
-    vialog_lt_regular:write(WIDTH-20-(string.len(departures[i].time)*31), ypos+8, departures[i].time, 60, 1, 1, 1, 1)
+    imagecache[departures[i].productsymbol]:draw(20, ypos+8, 20+40, ypos+48)
+    -- vialog_lt_regular:write(20, ypos+8, string.sub(departures[i].product, 0, 1), 60, 1, 1, 1, 1)
+    imagecache[departures[i].linesymbol]:draw(90, ypos+8, 90+79, ypos+48)
+    -- vialog_lt_regular:write(90, ypos+8, departures[i].linename, 60, 1, 1, 1, 1)
+    vialog_lt_regular:write(230, ypos, departures[i].destination, 60, 1, 1, 1, 1)
+    vialog_lt_regular:write(WIDTH-20-(string.len(departures[i].time)*31), ypos, departures[i].time, 60, 1, 1, 1, 1)
     ypos = ypos+70
   end
 
