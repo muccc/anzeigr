@@ -26,7 +26,7 @@ function node.render()
 
     if (font:width(nextevent.name,size)+offset>WIDTH) then
       o=nextevent.name:len()
-      while (o) and font:width(nextevent.name:sub(1,o),size)>WIDTH do
+      while (o) and font:width(nextevent.name:sub(1,o),size)+offset>WIDTH do
         o=nextevent.name:sub(1,o-1):match(".*%s()")
         if o then
           o=o-1
@@ -35,7 +35,7 @@ function node.render()
       if not o then
         o=nextevent.name:len()
       end
-      while o>0 and font:width(nextevent.name:sub(1,o),size)>WIDTH do
+      while o>0 and font:width(nextevent.name:sub(1,o),size)+offset>WIDTH do
         o=o-1
       end
       font:write(50, 600, nextevent.name:sub(1,o), 100, 1,1,0,1)
