@@ -1,8 +1,8 @@
 #!/bin/sh
 BASEDIR=$(dirname $0)
-[ -d  $BASEDIR/space_state ] && $BASEDIR/space_state/update
+[ -d $BASEDIR/space_state ] && $BASEDIR/space_state/update
 [ -d $BASEDIR/mvgdefas ] && python $BASEDIR/mvgdefas/getmvglive.py >/dev/null
 [ -d $BASEDIR/mvgdefas ] && python $BASEDIR/mvgdefas/ticker/getmvgticker.py
 [ -d $BASEDIR/drinkleaker ] && $BASEDIR/drinkleaker/update
-$BASEDIR/kalenderscraper/update
-$BASEDIR/ffmuc_state/update
+[ -d $BASEDIR/kalenderscraper ] && $BASEDIR/kalenderscraper/update
+[ -d $BASEDIR/ffmuc_state ] && $BASEDIR/ffmuc_state/update
